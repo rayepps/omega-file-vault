@@ -4,7 +4,7 @@ import { id } from "@/backend/id";
 import jwt from "@/backend/jwt";
 import { Id, Only, Verification } from "@/backend/model";
 import { compose } from "@exobase/core";
-import { useJsonBody, useServices } from "@exobase/hooks";
+import { useCors, useJsonBody, useServices } from "@exobase/hooks";
 import { useNext } from "@exobase/use-next";
 import crypto from "crypto";
 import dur from "durhuman";
@@ -14,6 +14,7 @@ import { Personal } from "web3-eth-personal";
 
 export default compose(
   useNext(),
+  useCors({ origins: "*" }),
   useStandardResponse(),
   useJsonBody((z) => ({
     verificationId: z.string().transform((x) => x as Id<"verification">),

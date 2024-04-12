@@ -5,11 +5,12 @@ import { id } from "@/backend/id";
 import { IdToken } from "@/backend/jwt/types";
 import { Id, Only, Verification } from "@/backend/model";
 import { compose } from "@exobase/core";
-import { useJsonBody, useServices, useTokenAuth } from "@exobase/hooks";
+import { useCors, useJsonBody, useServices, useTokenAuth } from "@exobase/hooks";
 import { useNext } from "@exobase/use-next";
 
 export default compose(
   useNext(),
+  useCors({ origins: "*" }),
   useStandardResponse(),
   useTokenAuth<IdToken["extra"]>(config.auth.jwt.secret),
   useServices({

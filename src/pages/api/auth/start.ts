@@ -4,13 +4,14 @@ import { id } from "@/backend/id";
 import jwt from "@/backend/jwt";
 import { Only, User, Verification } from "@/backend/model";
 import { compose } from "@exobase/core";
-import { useJsonBody, useServices } from "@exobase/hooks";
+import { useCors, useJsonBody, useServices } from "@exobase/hooks";
 import { useNext } from "@exobase/use-next";
 import crypto from "crypto";
 import dur from "durhuman";
 
 export default compose(
   useNext(),
+  useCors({ origins: "*" }),
   useStandardResponse(),
   useJsonBody((z) => ({
     address: z.string().startsWith("0x"),

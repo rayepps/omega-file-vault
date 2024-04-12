@@ -6,7 +6,12 @@ import formidable from "formidable";
 import { IdToken } from "@/backend/jwt/types";
 import { Id, Only, Verification } from "@/backend/model";
 import { compose } from "@exobase/core";
-import { useJsonBody, useServices, useTokenAuth } from "@exobase/hooks";
+import {
+  useCors,
+  useJsonBody,
+  useServices,
+  useTokenAuth,
+} from "@exobase/hooks";
 import { useNext } from "@exobase/use-next";
 import PersistentFile from "formidable/PersistentFile";
 import { Web3 } from "web3";
@@ -24,6 +29,7 @@ export const config = {
 
 export default compose(
   useNext(),
+  useCors({ origins: "*" }),
   useStandardResponse(),
   useTokenAuth<IdToken["extra"]>(conf.auth.jwt.secret),
   useServices({
