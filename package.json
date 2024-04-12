@@ -10,19 +10,40 @@
     "db:migrate:run": "npx tsx migrate.ts"
   },
   "dependencies": {
+    "@exobase/core": "^1.0.0-rc.30",
+    "@exobase/hooks": "^1.0.0-rc.61",
+    "@exobase/use-next": "^1.0.0-rc.34",
+    "@pinata/sdk": "^2.1.0",
+    "@web3-storage/w3up-client": "^12.5.0",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.7",
+    "durhuman": "^1.0.0",
+    "ethers": "^6.11.1",
+    "formidable": "^3.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.367.0",
+    "next": "14.1.4",
+    "postgres": "^3.4.4",
+    "radash": "^12.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.4"
+    "tailwind-merge": "^2.2.2",
+    "tsx": "^4.7.2",
+    "web3": "^4.7.0",
+    "web3-eth-personal": "^4.0.8",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/formidable": "^3.4.5",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "drizzle-kit": "^0.20.14",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
