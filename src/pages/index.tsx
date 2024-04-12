@@ -25,8 +25,8 @@ export default function Page() {
         <HydrateAppState />
         <Split className="items-center justify-center p-12">
           <Split className="w-full max-w-screen-lg p-6 rounded bg-slate-50">
-            <Stack className="bg-slate-950 p-6 rounded w-full justify-between">
-              <Split>
+            <Stack className="bg-slate-950 p-6 rounded w-full grow justify-between">
+              <Split className="items-center justify-between space-x-4">
                 <Logo className="fill-slate-50" />
                 <Link to="/0x/crypto" className="text-slate-50">
                   Crypto
@@ -48,7 +48,7 @@ export default function Page() {
                 </div>
               </div>
             </Stack>
-            <div className="p-6 w-full">
+            <div className="p-6 w-full grow">
               <Routes>
                 <Route path="/0x">
                   <Route
