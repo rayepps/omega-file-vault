@@ -1,5 +1,3 @@
-"use client";
-
 import Split from "@/frontend/ui/split";
 import { useAppState } from "../state/app";
 

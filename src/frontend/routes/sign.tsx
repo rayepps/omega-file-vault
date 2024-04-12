@@ -1,12 +1,12 @@
 import Header from "@/frontend/components/header";
 import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
-export default function Page() {
+export default function SignPage() {
   return (
     <div>
       <Header>
-        <Link href="/0x/crypto">
+        <Link to="/0x/crypto">
           <ArrowLeft size={32} />
         </Link>
       </Header>

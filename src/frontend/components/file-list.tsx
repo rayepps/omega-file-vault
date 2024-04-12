@@ -1,5 +1,3 @@
-"use client";
-
 import { Id } from "@/backend/model";
 import api from "@/frontend/api";
 import useFetch from "@/frontend/hooks/use-fetch";
@@ -7,7 +5,6 @@ import { useAppState } from "@/frontend/state/app";
 import Split from "@/frontend/ui/split";
 import Stack from "@/frontend/ui/stack";
 import { DownloadIcon, FileIcon } from "lucide-react";
-import Link from "next/link";
 import { useEffect } from "react";
 
 export default function FileList() {
@@ -33,7 +30,7 @@ export default function FileList() {
               </span>
               <span>{file.ipfsHash}</span>
             </Stack>
-            <Link
+            <a
               className="p-1.5 group hover:bg-slate-950 rounded"
               target="_blank"
               href={`https://gateway.pinata.cloud/ipfs/${file.ipfsHash}`}
@@ -42,7 +39,7 @@ export default function FileList() {
                 size={24}
                 className="text-slate-950 group-hover:text-slate-50"
               />
-            </Link>
+            </a>
           </Split>
         ))}
     </div>

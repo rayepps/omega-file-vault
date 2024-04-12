@@ -1,13 +1,13 @@
 import Header from "@/frontend/components/header";
 import { PenTool } from "lucide-react";
-import Link from "next/link";
-import WalletBalance from "./wallet-balance";
+import WalletBalance from "@/frontend/components/wallet-balance";
+import { Link } from "react-router-dom";
 
-export default function Page() {
+export default function WalletBalancePage() {
   return (
     <div>
       <Header>
-        <Link href="/0x/crypto/sign">
+        <Link to="/0x/crypto/sign">
           <PenTool size={32} />
         </Link>
       </Header>

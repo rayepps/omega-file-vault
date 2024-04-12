@@ -1,5 +1,3 @@
-"use client";
-
 import api from "@/frontend/api";
 import FileInput from "@/frontend/components/file-input";
 import useFetch from "@/frontend/hooks/use-fetch";
@@ -11,14 +9,14 @@ import Split from "@/frontend/ui/split";
 import Spinner from "@/frontend/ui/spinner";
 import { Web3 } from "web3";
 import { hashFile } from "@/lib/hash-file";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 export default function UploadForm() {
   const [file, setFile] = useState<File>();
   const uploadRequest = useFetch(api.files.upload);
   const authorizeUploadRequest = useFetch(api.files.authorize);
   const app = useAppState();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const signAndUpload = async () => {
     if (!file) return;
@@ -58,7 +56,7 @@ export default function UploadForm() {
       return;
     }
 
-    router.push("/0x/files");
+    navigate("/0x/files");
   };
 
   return (

@@ -1,17 +1,15 @@
-"use client";
-
 import { Web3 } from "web3";
 import { useAppState } from "@/frontend/state/app";
-import { useRouter } from "next/navigation";
 import useFetch from "@/frontend/hooks/use-fetch";
 import api from "@/frontend/api";
 import { isString } from "radash";
+import { useNavigate } from "react-router-dom";
 
 export default function ConnectButton({ children }: { children: string }) {
   const app = useAppState();
-  const router = useRouter();
   const startAuthRequest = useFetch(api.auth.start);
   const loginRequest = useFetch(api.auth.login);
+  const navigate = useNavigate();
 
   const connect = async () => {
     if (!window.ethereum) {
@@ -58,7 +56,7 @@ export default function ConnectButton({ children }: { children: string }) {
 
     app.login(login.result!.user, login.result!.idToken, accounts);
 
-    router.push("/0x/crypto");
+    navigate("/0x/crypto");
   };
 
   return (

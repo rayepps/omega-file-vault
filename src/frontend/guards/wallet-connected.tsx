@@ -1,5 +1,3 @@
-"use client";
-
 import { useAppState } from "@/frontend/state/app";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";

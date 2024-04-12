@@ -1,5 +1,3 @@
-"use client";
-
 import { useAppState } from "@/frontend/state/app";
 import Stack from "@/frontend/ui/stack";
 import { useEffect, useState } from "react";

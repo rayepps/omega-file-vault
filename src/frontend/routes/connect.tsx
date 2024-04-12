@@ -1,7 +1,7 @@
 import ConnectButton from "@/frontend/components/connect-button";
 import Stack from "@/frontend/ui/stack";
 
-export default function Page() {
+export default function ConnectPage() {
   return (
     <div>
       <Stack className="items-center">
